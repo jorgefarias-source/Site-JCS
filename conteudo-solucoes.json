@@ -1,0 +1,222 @@
+[
+  {
+    "slug": "mordome",
+    "name": "Mordomê",
+    "num": "01",
+    "category": "Gestão de bares e restaurantes",
+    "title": "Mordomê.<br/><em>Do salão<br/>à gestão.</em>",
+    "description": "Organize o atendimento, os pedidos da cozinha, o caixa e o consumo de insumos. Uma solução para acompanhar a rotina do bar ou restaurante, do primeiro pedido ao fechamento.",
+    "short": "Salão, cozinha, caixa e estoque na rotina do seu restaurante.",
+    "note": "Apresentação revisada a partir do catálogo funcional do Mordomê, na versão cliente/betao, consultado em 14/09/2026. Foram selecionados recursos descritos como implementados. Esta revisão não executou o aplicativo nem confirmou que o ambiente publicado contém a mesma versão. Disponibilidade comercial e implantação dependem de validação com a Jordão.",
+    "topics": [
+      "Salão e cozinha",
+      "Caixa e PDV",
+      "Estoque e receitas"
+    ],
+    "features": [
+      [
+        "PDV e cardápio por canal.",
+        "Cadastre produtos, preços e disponibilidade para PDV e salão. Faça vendas de balcão sem mesa ou comanda, com seleção da forma de pagamento e vínculo ao caixa do operador."
+      ],
+      [
+        "Mesas, comandas e cozinha.",
+        "Abra a comanda, lance itens, envie rodadas à cozinha e acompanhe recebido, em preparo, pronto e entregue. O fechamento da conta libera a mesa e preserva os registros da operação."
+      ],
+      [
+        "Estoque com ficha técnica.",
+        "Cadastre insumos, registre entradas com conversão de unidades e defina a quantidade usada em cada receita. A venda registra o consumo dos ingredientes associados ao produto."
+      ],
+      [
+        "Caixa por operador.",
+        "Acompanhe abertura, suprimentos, sangrias, conferência por forma de pagamento e fechamento. As diferenças apuradas ficam registradas junto ao movimento do caixa."
+      ],
+      [
+        "Unidades e acesso da equipe.",
+        "Organize estabelecimentos, usuários e perfis de acesso. Cada pessoa trabalha nas unidades permitidas, com permissões ajustadas ao seu papel na operação."
+      ],
+      [
+        "Histórico das operações.",
+        "Consulte registros de vendas, cancelamentos, caixa, estoque e cadastros, com responsável e horário. A consulta do histórico depende da permissão de acesso."
+      ]
+    ],
+    "featuretitle": "A operação inteira,<br/><em>sem perder os detalhes.</em>",
+    "featureintro": "Atendimento, produção e controle: recursos registrados como implementados no catálogo funcional consultado.",
+    "faqs": [
+      [
+        "O Mordomê atende bares e restaurantes?",
+        "Sim. O produto foi desenvolvido para essa operação, com PDV, salão, comandas, cozinha, caixa e controle de insumos. O escopo da implantação deve ser alinhado com a Jordão."
+      ],
+      [
+        "Como funciona o consumo por porção?",
+        "A ficha técnica informa a quantidade em gramas, mililitros ou unidades usada por produto. O catálogo funcional registra a baixa automática na venda. O exemplo desta página é apenas uma simulação matemática, sem conexão a um estoque real."
+      ],
+      [
+        "O sistema já trabalha sem internet?",
+        "A operação híbrida com servidor local e sincronização, chamada Mordomê Continuidade, está documentada como proposta futura. Esta página não anuncia funcionamento offline como recurso disponível."
+      ],
+      [
+        "Delivery, pagamento dividido e atualização instantânea da cozinha estão incluídos?",
+        "Esses pontos não são apresentados como entregues nesta revisão: a operação de delivery, o pagamento dividido e a atualização da cozinha por push aparecem como planejados. Consulte o escopo disponível para a sua implantação."
+      ]
+    ],
+    "review": "REVISÃO 05 · CATÁLOGO FUNCIONAL CONSULTADO",
+    "verification": "Documentação funcional consultada; aplicação não executada nesta revisão."
+  },
+  {
+    "slug": "cuidar",
+    "name": "Cuidar",
+    "num": "02",
+    "category": "Apresentação em preparação",
+    "title": "Cuidar.<br/><em>Uma solução<br/>da Jordão.</em>",
+    "description": "Conheça o Cuidar, solução da Jordão identificada na implantação Núcleo Criar. A apresentação dos módulos está sendo preparada para refletir o produto real.",
+    "short": "A solução identificada na implantação Núcleo Criar.",
+    "note": "A relação Cuidar = Núcleo Criar foi confirmada pelo responsável. O Railway indica o repositório jjrfarias/clinicas, mas a consulta ao GitHub retornou 404 nesta conexão. Isso não comprova a inexistência do repositório: acesso e endereço ainda precisam ser conferidos. Os módulos não foram verificados nesta revisão.",
+    "topics": [
+      "Cuidar",
+      "Núcleo Criar",
+      "Recursos em revisão"
+    ],
+    "features": [
+      [
+        "A identidade confirmada.",
+        "Cuidar é o nome usado nesta apresentação para a solução identificada na implantação Núcleo Criar."
+      ],
+      [
+        "O escopo em revisão.",
+        "O acesso ao código ainda precisa ser resolvido para descrever os módulos com precisão. Esta página não antecipa funcionalidades não verificadas."
+      ],
+      [
+        "A apresentação do produto.",
+        "As telas e o detalhamento da experiência serão incluídos após a validação do material técnico e comercial."
+      ]
+    ],
+    "featuretitle": "Uma identidade definida.<br/><em>Detalhes em revisão.</em>",
+    "featureintro": "A relação com Núcleo Criar está confirmada. A lista de recursos ainda depende do acesso ao repositório correto.",
+    "faqs": [
+      [
+        "Cuidar e Núcleo Criar são a mesma solução?",
+        "O responsável confirmou que a implantação Núcleo Criar corresponde ao Cuidar. Por isso, a página utiliza Cuidar como nome de apresentação."
+      ],
+      [
+        "Por que os módulos ainda não estão descritos?",
+        "O repositório associado não ficou acessível pela conexão usada nesta revisão. Antes de anunciar módulos, será necessário conferir o código ou a documentação autorizada do produto."
+      ],
+      [
+        "Como conversar sobre o Cuidar?",
+        "Use o botão de conversa para preparar uma mensagem identificada com Cuidar. O WhatsApp comercial da Jordão ainda está pendente de configuração."
+      ]
+    ],
+    "review": "REVISÃO 05 · IDENTIDADE CONFIRMADA · RECURSOS PENDENTES",
+    "verification": "Identidade confirmada pelo responsável; repositório não acessível nesta conexão."
+  },
+  {
+    "slug": "venda-de-celular",
+    "name": "CR Smart",
+    "num": "03",
+    "category": "Lojas de celulares e assistência",
+    "title": "CR Smart.<br/><em>Da negociação<br/>ao pós-venda.</em>",
+    "description": "Reúna vendas de celulares, avaliação de aparelhos na troca, consertos e relacionamento com clientes. Uma visão da operação para acompanhar cada atendimento com mais contexto.",
+    "short": "Vendas, trocas, assistência técnica e relacionamento com clientes.",
+    "note": "Recursos conferidos por leitura das telas e rotas de servidor do repositório associado ao CR Smart. Foi consultado o commit de953c1, indicado pelo Railway para o último deploy retornado. Não foram acessados dados de clientes nem executados testes nas aplicações. As composições desta página são ilustrativas; não são capturas do sistema.",
+    "topics": [
+      "Vendas e trocas",
+      "Assistência técnica",
+      "Relacionamento"
+    ],
+    "features": [
+      [
+        "Venda com avaliação de troca.",
+        "Registre cliente e aparelho, avalie o celular recebido na troca por uma lista de verificação e calcule a diferença. A venda também registra a opção de garantia e a forma de pagamento."
+      ],
+      [
+        "Consertos acompanhados.",
+        "Registre modelo, defeitos, prazo, orçamento estimado e, quando informado, o IMEI. Acompanhe o status do conserto e sua relação com o atendimento do cliente."
+      ],
+      [
+        "Relacionamento e oportunidades.",
+        "Acompanhe oportunidades de venda e assistência em etapas, registre interações e organize tarefas de retorno. A venda concluída e o conserto alimentam o histórico do relacionamento."
+      ],
+      [
+        "Cadastro de aparelhos e peças.",
+        "Consulte quantidades, custos, preços e indicação de estoque baixo. Mantenha cadastros separados de aparelhos e peças, com dados de compatibilidade e fornecedor para as peças."
+      ],
+      [
+        "Resumo gerencial por período.",
+        "Consulte os registros de vendas, orçamentos de conserto e despesas por período. O resumo do código consultado inclui estimativas de conserto; não representa conciliação bancária nem comprovação de recebimento."
+      ],
+      [
+        "Mensagens com contexto.",
+        "Use modelos de mensagem para primeiro contato, orçamento, retirada e pós-venda. O sistema prepara a abertura do WhatsApp com o texto; a confirmação do envio continua com o atendente."
+      ]
+    ],
+    "featuretitle": "Mais contexto para<br/><em>cada atendimento.</em>",
+    "featureintro": "Recursos identificados no código da versão indicada pelo Railway, sem execução de operações reais.",
+    "faqs": [
+      [
+        "O CR Smart vende os aparelhos?",
+        "Não. Esta é a apresentação de um sistema da Jordão para lojas de celulares e assistência técnica, não uma loja virtual. O site institucional não comercializa smartphones nem recebe pagamentos."
+      ],
+      [
+        "Como funcionam trocas, garantias e IMEI?",
+        "A venda possui avaliação do aparelho recebido na troca e registro da opção de garantia. O IMEI foi identificado no cadastro de consertos. Esta revisão não comprova rastreamento individual de IMEI em todo o estoque e em todas as vendas."
+      ],
+      [
+        "O WhatsApp envia mensagens automaticamente?",
+        "Não no fluxo que foi verificado. Ele prepara a mensagem e abre o WhatsApp para o atendente concluir o envio. Isso não equivale a um robô de atendimento nem a disparo automático."
+      ],
+      [
+        "Há emissão fiscal, cobrança integrada ou baixa automática de estoque?",
+        "Esses recursos não foram comprovados no código consultado. A venda calcula valores e taxas, mas isso não confirma integração com adquirentes ou processamento de pagamentos. O cadastro de estoque não deve ser confundido com baixa automática por venda."
+      ]
+    ],
+    "review": "REVISÃO 05 · CÓDIGO CONSULTADO",
+    "verification": "Código consultado na versão indicada pelo Railway; sem teste operacional."
+  },
+  {
+    "slug": "petshop",
+    "name": "Petshop",
+    "num": "04",
+    "category": "Gestão para o universo pet",
+    "title": "Petshop.<br/><em>Mais cuidado<br/>com a gestão.</em>",
+    "description": "Uma proposta de apresentação para aproximar a organização do negócio da rotina de produtos e atendimentos do petshop.",
+    "short": "Organização do negócio, com atenção à rotina do petshop.",
+    "note": "O produto foi informado pelo responsável, mas seu projeto ou repositório ainda não foi identificado nas listagens acessíveis. Produtos, atendimentos e rotina permanecem sugestões editoriais, não funcionalidades comprovadas. A página depende do link ou da documentação correta para ser concluída.",
+    "topics": [
+      "Produtos",
+      "Atendimentos",
+      "Rotina"
+    ],
+    "features": [
+      [
+        "Os produtos.",
+        "Proposta de destaque para a organização dos itens comercializados e das informações usadas no dia a dia do negócio."
+      ],
+      [
+        "Os atendimentos.",
+        "Proposta de destaque para a continuidade do atendimento e a organização das informações relevantes à equipe."
+      ],
+      [
+        "A rotina.",
+        "Proposta de destaque para dar clareza às atividades da operação. Agenda, serviços e demais módulos dependem de confirmação."
+      ]
+    ],
+    "featuretitle": "A rotina do petshop,<br/><em>com mais clareza.</em>",
+    "featureintro": "Uma direção editorial para a solução. As funcionalidades não estão sendo apresentadas como implementadas.",
+    "faqs": [
+      [
+        "A solução inclui banho e tosa ou agendamentos?",
+        "Esses módulos não foram confirmados. A estrutura da página permite apresentá-los depois, caso façam parte do produto disponível."
+      ],
+      [
+        "O sistema inclui atendimento veterinário?",
+        "Não foi confirmado nenhum recurso clínico ou veterinário. Esta página não anuncia prontuários, prescrições ou outras funcionalidades clínicas."
+      ],
+      [
+        "Posso solicitar uma apresentação?",
+        "Você pode preparar uma conversa sobre a solução Petshop. A Jordão poderá confirmar o escopo disponível e a forma de apresentação do produto."
+      ]
+    ],
+    "review": "REVISÃO 05 · REPOSITÓRIO E RECURSOS PENDENTES",
+    "verification": "Produto informado pelo responsável; repositório e recursos pendentes de identificação."
+  }
+]
