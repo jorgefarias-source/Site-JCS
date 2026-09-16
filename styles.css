@@ -1,5 +1,5 @@
 /* JORDÃO / Site institucional — revisão 02: iconografia discreta. */
-:root{--paper:#f6f6f6;--white:#ffffff;--ink:#202020;--muted:#646464;--line:#dbdbdb;--dark:#1c1c1c;--dark-muted:#b7b7b7;--serif:Georgia,"Times New Roman",serif;--sans:"Helvetica Neue",Arial,sans-serif;--max:1256px}
+:root{--paper:#f6f6f6;--white:#ffffff;--ink:#202020;--muted:#646464;--line:#dbdbdb;--dark:#1c1c1c;--dark-muted:#b7b7b7;--serif:Georgia,"Times New Roman",serif;--sans:"Helvetica Neue",Arial,sans-serif;--max:1256px;--accent:#ff5c28;--accent-ink:#1c1c1c}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:110px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -86,3 +86,68 @@ a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}b
 @media(max-width:380px){.disciplines{font-size:14px}.disciplines>span+span::before{margin-inline:14px}}
 
 @media print{.header{position:static}.nav,.menu-toggle,.hero-actions,.hero-note,.scroll-link,.contact-form,.back-top,.plain-button,.challenge-links,.dialog,.solutions-note a{display:none!important}body{background:white}.container{width:100%}.section{padding:32px 0}.hero{padding-top:28px}.hero-grid{gap:30px}.hero h1{font-size:50px}.hero-bottom{margin-top:20px}.about{background:white;color:black}.about .eyebrow,.about-detail p,.about-detail .about-lead,.about h2 em,.about-principles strong{color:#333333}.about-signature img{filter:invert(1)}.about-grid{gap:40px}.contact-grid{grid-template-columns:1fr}.footer{background:white;color:black}.footer img{filter:invert(1)}.footer p,.footer-top p,.footer-top p>span{color:#333333}a{break-inside:avoid}.service-card,.method-grid li{break-inside:avoid}}
+
+/* ===== Revisão 06 — acento, movimento e chamadas mais fortes ===== */
+
+/* Acento em pontos estratégicos: números de seção, ícones, foco */
+.section-index{position:relative;color:var(--accent);font-weight:700}
+.service-top svg{stroke:var(--ink);transition:stroke .25s,transform .35s}
+.service-card:hover .service-top svg{stroke:var(--accent);transform:translateY(-3px) rotate(-2deg)}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline-color:var(--accent)}
+.eyebrow-line{background:var(--accent)}
+
+/* Botão primário: sweep de luz + leve escala no hover, sem perder a base escura aprovada */
+.button-dark{position:relative;overflow:hidden;z-index:0}
+.button-dark::before{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-102%);transition:transform .38s cubic-bezier(.65,0,.35,1);z-index:-1}
+.button-dark:hover::before{transform:translateX(0)}
+.button-dark:hover{color:#171717;transform:translateY(-2px) scale(1.015)}
+.button-dark:active{transform:translateY(0) scale(.99)}
+
+/* Card link e text-link: sublinhado que "acende" em acento no hover */
+.card-link:hover,.text-link:hover,.solutions-note a:hover,.challenge-links a:hover{text-decoration-color:var(--accent);color:var(--ink)}
+.challenge-links a{transition:padding-left .25s,color .2s}
+.challenge-links a:hover{padding-left:8px}
+
+/* Hero: textura sutil de ruído + brilho de acento no palco da marca */
+.brand-stage{position:relative}
+.brand-stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 82% 12%,rgba(255,92,40,.16),transparent 42%)}
+.stage-badge{position:relative}
+.stage-badge::before{content:"";position:absolute;left:-1px;top:-1px;width:22px;height:2px;background:var(--accent)}
+.hero-note{position:relative;padding-left:14px}
+.hero-note::before{content:"";position:absolute;left:0;top:50%;width:7px;height:7px;border-radius:50%;background:var(--accent);transform:translateY(-50%)}
+
+/* Portfolio: destaque de acento na borda e número ao passar o mouse */
+.portfolio-card{position:relative;transition:transform .3s,box-shadow .3s}
+.portfolio-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -28px rgba(0,0,0,.35)}
+.portfolio-card::before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--accent);transition:width .35s}
+.portfolio-card:hover::before{width:100%}
+.portfolio-meta span:last-child{transition:color .2s}
+.portfolio-card:hover .portfolio-meta span:last-child{color:var(--accent)}
+
+/* Chip de disciplinas do hero: acento discreto no separador ao passar perto */
+.disciplines>span{transition:color .2s}
+.disciplines>span:hover{color:var(--accent)}
+
+/* Formulário: foco e envio com acento */
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}
+.submit-button:not(:disabled)::before{background:var(--accent)}
+
+/* Reveal ao rolar — respeita prefers-reduced-motion */
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+[data-reveal].is-visible{opacity:1;transform:none}
+[data-reveal="stagger"]>*{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+[data-reveal="stagger"].is-visible>*{opacity:1;transform:none}
+[data-reveal="stagger"].is-visible>*:nth-child(1){transition-delay:.02s}
+[data-reveal="stagger"].is-visible>*:nth-child(2){transition-delay:.09s}
+[data-reveal="stagger"].is-visible>*:nth-child(3){transition-delay:.16s}
+[data-reveal="stagger"].is-visible>*:nth-child(4){transition-delay:.23s}
+@media(prefers-reduced-motion:reduce){[data-reveal],[data-reveal="stagger"]>*{opacity:1!important;transform:none!important;transition:none!important}}
+
+/* Barra de chamada fixa (mobile) — reforça a conversão sem brigar com o header */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(28,28,28,.92);backdrop-filter:blur(10px);border-top:1px solid #3a3a3a;transform:translateY(100%);transition:transform .3s ease}
+.sticky-cta.is-shown{transform:translateY(0)}
+.sticky-cta a{display:flex;align-items:center;justify-content:center;gap:14px;background:var(--accent);color:#171717;font-size:13px;font-weight:600;padding:14px 18px;border-radius:3px;min-height:48px}
+@media(max-width:720px){.sticky-cta{display:block}.footer{padding-bottom:88px}}
+
+@media print{.sticky-cta{display:none!important}}

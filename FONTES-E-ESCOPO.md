@@ -28,6 +28,11 @@ Fontes no commit consultado:
 - [Relacionamento](https://github.com/jjrfarias/chatbot-web/blob/de953c1d7b5f71502dfecab41d9fb824d9b9fdc0/server/src/routes/crm.ts): etapas de vendas/assistência, tarefas, modelos de mensagem e abertura de WhatsApp.
 - [Resumo gerencial](https://github.com/jjrfarias/chatbot-web/blob/de953c1d7b5f71502dfecab41d9fb824d9b9fdc0/server/src/routes/finance.ts): agrega registros de vendas, estimatedBudget dos consertos e despesas. Não deve ser apresentado como recebimento liquidado, conciliação bancária ou lucro comprovado.
 
+Reconfirmado na revisão 06 (16/09/2026), mesmo commit: o módulo financeiro não tem
+rota de criação/edição de despesas neste commit, apenas leitura de registros
+semeados — é agregação, não um controle de caixa completo. A rota `home.ts`
+(resumo do dia, ticket médio) também foi confirmada como real.
+
 Limites editoriais importantes: não prometer baixa automática de estoque, emissão
 fiscal, cobrança integrada, rastreamento de IMEI em todas as vendas/estoque, robô
 WhatsApp, disparo automático ou conformidade/certificação de segurança. Essas
@@ -48,22 +53,80 @@ commit; portanto não foi possível comprovar equivalência entre código/docume
 e o ambiente publicado. Não são anunciados como prontos delivery operacional,
 Continuidade/offline, pagamento dividido ou cozinha em tempo real por push.
 
+**Achado da revisão 06 (16/09/2026)**: `docs/FUNCOES.md` só foi tocado no commit
+inicial (`00ab8c0`). Commits posteriores da branch (`14b68fc` "completa operação
+multiunidade do Betão"; `fbae8ac` "adiciona salão com áreas/garçom, delivery
+operacional e rastreio com mapa") implementaram código real para delivery
+operacional, rastreio de entregador com mapa e pagamento dividido — recursos que
+o próprio `FUNCOES.md` ainda lista como "Planejado". Ou seja, o documento indicado
+como fonte de verdade está desatualizado em relação ao código. Como esses três
+itens não têm validação/documentação formal de "concluído" pelos critérios do
+próprio projeto, o site os trata como "em desenvolvimento, não confirmados para
+anúncio comercial" — nem como inexistentes, nem como prontos. Recomenda-se que o
+time do Mordomê atualize o catálogo funcional antes de decidir o que promover.
+
 ## Cuidar
 
-Relação Cuidar = Núcleo Criar confirmada pelo responsável na conversa. O Railway
-associa o serviço a `jjrfarias/clinicas`, branch `cliente/nucleo-criar`. A consulta
-GitHub ao repositório retornou 404. A conta autenticada é jjrfarias, mas a listagem
-da integração não revelou acesso a clinicas. Um 404 não distingue falta de
-permissão, mudança de nome e inexistência. Não foram adivinhados módulos clínicos.
+Relação Cuidar = Núcleo Criar confirmada pelo responsável. Na revisão 05, o Railway
+associava o serviço a `jjrfarias/clinicas`, mas a consulta GitHub retornou 404.
+
+**Resolvido na revisão 06 (16/09/2026)**: acesso ao repositório `jjrfarias/clinicas`
+liberado (branch padrão `main`). Fontes: `README.md`, `docs/ENTREGA_CLIENTE.md`,
+`brain.md`, árvore `src/features`, `src/data`, `src/domain`, `server/`.
+
+Módulos confirmados em código: agenda com regras de conflito (`server/appointmentRules.ts`),
+pacientes e ficha (`src/features/PatientsPage.tsx`), prontuário e odontograma
+(`server/clinicalRecordData.ts`, `src/features/Odontogram.tsx`), plano de cuidado
+(`src/domain/carePlan.ts`), atendimento/check-in (`src/features/AttendanceModal.tsx`),
+financeiro e comissão (`server/financeData.ts`, `src/domain/commission.ts`),
+equipe e RBAC (`server/permissions.ts`), unidades e recursos (`src/features/UnitsPage.tsx`),
+serviços (`src/features/ServicesPage.tsx`), lista de espera (`src/features/WaitlistPage.tsx`),
+relatórios (`src/features/ReportsPage.tsx`), auditoria (`server/auditData.ts`),
+backup (`server/backup.ts`), autenticação e segurança (`server/auth.ts`, `server/security.ts`),
+automação de WhatsApp por pareamento de aparelho (`server/whatsapp/*`).
+
+Limites declarados no próprio repositório (README "Limites conhecidos" e
+`docs/ENTREGA_CLIENTE.md`): sem garantia de entrega no WhatsApp (depende de
+pareamento, sem SLA); sem integração eletrônica com convênios/TISS nem emissão
+fiscal; SQLite atende instalação única/pequena, não alta disponibilidade; backup
+externo, monitoramento 24x7 e resposta a incidentes pertencem ao ambiente do
+cliente; conformidade LGPD completa pendente de revisão jurídica; sem gateway de
+pagamento (nenhuma dependência encontrada no código); sem IA clínica/diagnóstica
+(excluída explicitamente em `brain.md` sem requisitos regulatórios definidos);
+estoque/lotes, portal do paciente e assinatura recorrente aparecem só como
+backlog, sem implementação correspondente.
 
 ## Petshop
 
-Nome informado pelo responsável. Nenhum repositório com esse nome foi identificado
-na lista acessível da conta nesta revisão. Não equivale a afirmar que não existe.
-As sugestões editoriais da versão 4 continuam explicitamente não verificadas.
+Nome informado pelo responsável. Na revisão 05, nenhum repositório havia sido
+identificado.
+
+**Resolvido na revisão 06 (16/09/2026)**: repositório privado `jjrfarias/petshop`
+identificado e acessado (branch padrão `master`, descrição "Sistema de gestao e
+vendas para petshop e agropecuária"). Stack NestJS + Prisma + PostgreSQL (API) e
+Next.js + Tailwind (web), monorepo com testes automatizados (vitest) e CI.
+
+Módulos confirmados em código, com CRUD real (controllers + services + DTOs +
+Prisma) e tela correspondente: autenticação/papéis (`apps/api/src/auth`),
+clientes e pets (`apps/api/src/clientes`, `apps/api/src/pets`), produtos por
+unidade ou peso (`apps/api/src/produtos`), estoque por lote com baixa automática
+por validade/FIFO — validado por teste automatizado `estoque.service.spec.ts` —,
+PDV (`apps/api/src/vendas`, teste `vendas.service.spec.ts`), financeiro básico
+com lançamento automático de receita por venda (`apps/api/src/financeiro`),
+agendamento de banho/tosa com checagem de conflito e geração automática de
+lançamento financeiro (`apps/api/src/agendamentos`), e dashboard
+(`apps/web/src/app/dashboard`).
+
+Confirmado como inexistente no código: emissão de nota fiscal, gateway de
+pagamento/cobrança integrada, notificações automáticas (WhatsApp/SMS/e-mail),
+e-commerce, assinatura/recorrência, multi-loja, fidelidade. Segundo o `brain.md`
+do próprio autor, o sistema ainda não foi implantado em produção (só dev/CI) —
+não anunciar como já hospedado ou em uso comercial sem confirmação do cliente.
 
 ## Próximos insumos
 
-Liberar ou corrigir o acesso ao repositório do Cuidar; identificar o repositório
-Petshop; validar conteúdo comercial, escopo de implantação e telas para divulgação.
-As composições de produto entregues são ilustrativas, sem dados reais de clientes.
+Confirmar com o dono do Mordomê o status de delivery operacional, rastreio de
+entregador e pagamento dividido antes de promovê-los como recursos maduros.
+Validar com a Jordão a data/local de implantação comercial do Cuidar e do
+Petshop antes de publicar qualquer prazo. As composições de produto entregues
+são ilustrativas, sem dados reais de clientes.

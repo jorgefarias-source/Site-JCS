@@ -86,23 +86,20 @@
 .concept-title{font-family:var(--sans);font-size:32px;line-height:1.15;letter-spacing:-.035em;margin:26px 0 0;color:#f1f1f1;font-weight:400}
 .concept-title em{font-family:var(--serif);font-style:italic;color:#dedede}
 .concept-baseline{font-size:8px;letter-spacing:.17em;padding-top:23px;border-top:1px solid #515151;margin-top:auto;color:#c7c7c7}
-/* A working mathematical example, never connected to the actual product. */
-.stock-label{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #484848;padding:21px 0 12px}
-.stock-label>span{font-size:8px;letter-spacing:.13em;color:#bdbdbd}
-.stock-label strong{font-size:13px;font-weight:400}
-.stock-values{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;padding:20px 0 19px}
-.stock-values>div+div{border-left:1px solid #505050;padding-left:24px}
-.stock-values span{font-size:10px;color:#c8c8c8;display:block;margin-bottom:8px}
-.stock-values strong{font-size:33px;letter-spacing:-.04em;line-height:1;font-weight:400;white-space:nowrap;font-variant-numeric:tabular-nums}
-.stock-values small{font-size:17px;font-weight:400;color:#c6c6c6;letter-spacing:0}
-.stock-track{height:4px;background:#515151;overflow:hidden;margin-bottom:24px}
-.stock-track>span{display:block;height:100%;width:100%;background:#e4e4e4;transition:width .25s ease}
-.stock-actions{display:flex;align-items:center;gap:22px}
-.concept-button{background:#ededed;color:#242424;min-height:43px;border-color:#ededed;font-size:11px;padding:12px 18px;white-space:normal}
-.concept-button:hover{background:#fff}
-.concept-button:disabled{background:#494949;color:#ccc;border-color:#666}
-.concept-reset{border:0;background:transparent;color:#ddd;font-size:11px;min-height:44px;padding:8px 0;text-decoration:underline;text-underline-offset:5px;text-decoration-color:#858585}
-.stock-status{font-size:10px;color:#c2c2c2;line-height:1.7;margin-top:14px;min-height:18px;font-variant-numeric:tabular-nums}
+/* Salão do Mordomê: composição de mesas por status, nunca conectada ao produto real. */
+.floor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0 20px}
+.floor-table{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font:italic 16px var(--serif);border:1px solid #4a4a4a;border-radius:4px;color:#d8d8d8;background:#2c2c2c}
+.floor-table.is-free{color:#8f8f8f;border-color:#3d3d3d;background:transparent}
+.floor-table.is-open{border-color:#6b6b6b;background:#333}
+.floor-table.is-kitchen{border-color:var(--accent);color:#f5f5f5;background:#333}
+.floor-table.is-bill{border-color:#8f8f8f;background:#3d3d3d;color:#f1f1f1}
+.floor-legend{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:19px;border-top:1px solid #484848;margin-top:auto}
+.floor-legend span{display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:.06em;color:#c2c2c2}
+.floor-legend i{width:7px;height:7px;border-radius:50%;background:#5a5a5a;flex:none}
+.floor-legend span:nth-child(1) i{background:transparent;border:1px solid #6b6b6b}
+.floor-legend span:nth-child(2) i{background:#8a8a8a}
+.floor-legend span:nth-child(3) i{background:var(--accent)}
+.floor-legend span:nth-child(4) i{background:#f1f1f1}
 .cuidar-panel{background:linear-gradient(115deg,#303030,#202020);min-height:455px}
 .cuidar-wordmark{font:italic 99px/1 var(--serif);letter-spacing:-.065em;margin:auto 0;text-align:center;padding:46px 0}
 .cuidar-wordmark span{font:8px/1.8 var(--sans);letter-spacing:.22em;display:block;margin:23px 0 0;color:#ccc}

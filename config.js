@@ -5,6 +5,6 @@
  * Nenhuma mensagem é enviada automaticamente.
  */
 window.JORDAO_CONFIG = Object.freeze({
-  whatsapp: "",
-  emailComercial: ""
+  whatsapp: "5522981788867",
+  emailComercial: "jorge.farias@jordaoconsultoria.com"
 });
